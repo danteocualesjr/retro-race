@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Racing Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="ui-overlay">
+            <div id="menu-screen" class="screen">
+                <h1>RETRO RACER</h1>
+                <div class="menu-buttons">
+                    <button id="start-btn" class="menu-btn">START RACE</button>
+                    <button id="high-scores-btn" class="menu-btn">HIGH SCORES</button>
+                    <button id="instructions-btn" class="menu-btn">INSTRUCTIONS</button>
+                </div>
+            </div>
+            <div id="instructions-screen" class="screen hidden">
+                <h2>INSTRUCTIONS</h2>
+                <div class="instructions-content">
+                    <p><strong>Controls:</strong></p>
+                    <p>Arrow Keys or WASD - Drive</p>
+                    <p>Space - Use Power-up</p>
+                    <p>ESC - Pause</p>
+                    <br>
+                    <p><strong>Objective:</strong></p>
+                    <p>Complete 3 laps as fast as possible!</p>
+                    <p>Collect power-ups to gain advantages.</p>
+                    <p>Overtake opponents for bonus points.</p>
+                </div>
+                <button id="back-btn" class="menu-btn">BACK</button>
+            </div>
+            <div id="high-scores-screen" class="screen hidden">
+                <h2>HIGH SCORES</h2>
+                <div id="high-scores-list"></div>
+                <button id="back-from-scores-btn" class="menu-btn">BACK</button>
+            </div>
+            <div id="hud" class="hidden">
+                <div class="hud-item">
+                    <span>Speed: <span id="speed-display">0</span> km/h</span>
+                </div>
+                <div class="hud-item">
+                    <span>Lap: <span id="lap-display">1</span>/3</span>
+                </div>
+                <div class="hud-item">
+                    <span>Position: <span id="position-display">1</span></span>
+                </div>
+                <div class="hud-item">
+                    <span>Time: <span id="time-display">0:00</span></span>
+                </div>
+                <div class="hud-item">
+                    <span>Score: <span id="score-display">0</span></span>
+                </div>
+                <div id="powerup-indicator" class="hidden">
+                    <span>Power-up Ready! Press SPACE</span>
+                </div>
+            </div>
+            <div id="game-over-screen" class="screen hidden">
+                <h2>RACE FINISHED!</h2>
+                <div id="final-stats">
+                    <p>Final Score: <span id="final-score">0</span></p>
+                    <p>Time: <span id="final-time">0:00</span></p>
+                    <p>Position: <span id="final-position">1</span></p>
+                </div>
+                <div class="menu-buttons">
+                    <button id="retry-btn" class="menu-btn">RETRY</button>
+                    <button id="menu-btn" class="menu-btn">MAIN MENU</button>
+                </div>
+            </div>
+            <div id="pause-screen" class="screen hidden">
+                <h2>PAUSED</h2>
+                <p>Press ESC to resume</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/car.js"></script>
+    <script src="js/track.js"></script>
+    <script src="js/powerup.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
